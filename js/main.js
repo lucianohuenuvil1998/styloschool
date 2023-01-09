@@ -1,4 +1,5 @@
 const form = document.getElementById("form"); 
+
 let validaCorreo = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
 let errores = {
@@ -10,13 +11,32 @@ let errores = {
     success:"El formulario fue enviado correctamente"
 }
 
+let intervalo
+
+
+
+//document.querySelector("html").style = 'overflow:hidden;'
+
+
 
 
 addEventListener('DOMContentLoaded', () => {
-    setInterval(slide,6000);
+    intervalo = setInterval(slide,6000);
+
+    if (!document.getElementById("welcome_message").style.display){
+        document.querySelector("html").style = 'overflow:hidden;'
+    }
+
+    
   })
    
   
+
+function closeMessage() {
+    let message = document.getElementById("welcome_message")
+    message.style.display = "none";
+    document.querySelector("html").style = 'overflow:scroll;'
+}
   
 
 
@@ -26,20 +46,17 @@ function slide() {
     for (index of idSlide){
     switch (index.style.marginLeft){
         case "":
-            index.style.marginLeft = "0%"
+            index.style.marginLeft = "-100%"
             break;
         case "0%":
             index.style.marginLeft = "-100%";
             break;
-        // case "-100%":
-        //     index.style.marginLeft = "-200%"
-        //     break;
-        // case "-200%":
-        //     index.style.marginLeft = "-300%"
-        //     break;
         case "-100%":
             index.style.marginLeft = "0%"
             break;
+        // case "-200%":
+        //     index.style.marginLeft = "0%"
+        //     break;
     }
     }
 
@@ -48,6 +65,8 @@ function slide() {
 
 
 function cambiarDerecha()   {
+
+    clearInterval(intervalo)
     let idSlide = document.getElementsByClassName('carousel-slide');
     for (index of idSlide){
 
@@ -58,23 +77,23 @@ function cambiarDerecha()   {
             case '0%':
                 index.style.marginLeft = "-100%";
                 break;
-
-            // case "-100%":
-            //     index.style.marginLeft = "-200%"
-            //     break;
-            // case "-200%":
-            //     index.style.marginLeft = "-300%"
-            //     break;
             case "-100%":
                 index.style.marginLeft = "0%"
                 break;
 
+            // case "-200%":
+            //     index.style.marginLeft = "0%"
+            //     break;
+
         }
     }
+    intervalo = setInterval(slide,6000);
 }
 
 
 function cambiarIzquierda()   {
+    clearInterval(intervalo)
+
     let idSlide = document.getElementsByClassName('carousel-slide');
     for (index of idSlide){
         switch (index.style.marginLeft){
@@ -84,17 +103,16 @@ function cambiarIzquierda()   {
             case "0%":
                 index.style.marginLeft = "-100%";
                 break;
-            // case "-100%":
-            //     index.style.marginLeft = "0%"
-            //     break;
-            // case "-200%":
-            //     index.style.marginLeft = "-100%"
-            //     break;
             case "-100%":
                 index.style.marginLeft = "0%"
                 break;
+            // case "-100%":
+            //     index.style.marginLeft = "0%"
+            //     break;
         }
     }
+    intervalo = setInterval(slide,6000);
+
 }
 
   
@@ -191,7 +209,7 @@ const validarCampos = (name, number, email, asunto, message, err) => {
 
 
 
-form.addEventListener("submit", async (e) => {
+form?.addEventListener("submit", async (e) => {
     e.preventDefault()
 
     let err = document.querySelector(".err");

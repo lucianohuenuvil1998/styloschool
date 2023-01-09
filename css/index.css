@@ -142,9 +142,19 @@ main{
 
 .carousel-items img{
     width: 100%;
+    height: 100%;
     filter: brightness(90%);
     text-align: center;
 }
+
+
+.carousel-items video{
+    width: 100%;
+    height: 100%;
+    filter: brightness(90%);
+    text-align: center;
+}
+
 
 .icon-container{
     display: flex;
@@ -178,6 +188,58 @@ main{
     padding:30px 0;
 
 }
+
+
+/* PAGINA ACTUAL*/
+
+
+.breadcrumb-trail {
+    list-style: none;
+    display: flex;
+    text-align: center;
+  }
+  
+  .breadcrumb-trail li {
+    margin-right: 15px;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .breadcrumb-trail a {
+    color: #666;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .breadcrumb-trail i {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+
+
+  
+  .breadcrumb-trail li:last-child {
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* CATEGORIAS */
@@ -306,6 +368,7 @@ main{
 .about-us p{
     color: rgb(64, 64, 64);
     text-align: justify;
+    padding-top: 20px;
 }
 
 .about-us h2{
@@ -330,10 +393,11 @@ main{
 
 .heading-form {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     color: rgb(60, 193, 193);
 }
+
 
 
 
@@ -546,11 +610,15 @@ main{
 
 .btn-wsp i{
     font-size: 55px;
-    color: rgb(255, 255, 255);
+    color: rgb(249, 249, 249);
 }
 
 
 /* Footer container*/
+
+.bg-footer{
+    background-color: #fbfbfb;
+}
 
 .footer-container{
     display: flex;
@@ -673,6 +741,41 @@ main{
 }
 
 
+
+/*DEPORTES*/
+
+.container-sport{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    padding: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.carousel-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+.sport-background{
+    width: 600px;
+    position: relative;
+}
+
+
+.sport-background img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.sport-text{
+    padding: 15px;
+    width: 400px;
+}
+
 /* PRODUCTOS */
 
 .container-product{
@@ -764,6 +867,93 @@ main{
 }
 
 
+
+
+
+
+
+
+.re-box{
+    display: flex;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    height: 100vh;
+    background-color: #212121e1;
+    justify-content: center;
+    z-index: 2;
+    
+}
+
+
+
+.re-content{
+    top: 30px;
+    margin: 10px;
+
+    width: 80%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    
+}
+
+.re-content::-webkit-scrollbar {
+    display: none;
+   }
+
+
+.videobox-re{
+    display: none;
+}
+   
+.videobox-re video{
+    width: 100%;  
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+   
+
+.videobox video{
+    width: 100%;  
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+
+
+.re-close-button{
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    
+}
+
+
+.ire-close-button:hover{
+    cursor: pointer;
+}
+    
+.re-close-button i{
+    font-size: 25px;
+    color: #5a5a5a;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 1199px){
 
     .help-est1{
@@ -780,7 +970,7 @@ main{
 
 }
 
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: 780px){
 
     .icon-responsive{
         display: block;
@@ -815,6 +1005,19 @@ main{
         display: flex;
     }
 
+    .videobox{
+        display: none;
+    }
+
+    .videobox-re{
+        display: block;
+    }
+
+
+    .re-content{
+        height: 100%;
+    }
+
 }
 
 
@@ -828,3 +1031,6 @@ main{
     }
 
 }
+
+
+
