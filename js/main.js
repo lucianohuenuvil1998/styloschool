@@ -67,20 +67,20 @@ closeOuterClick?.addEventListener("click", () => {
 function slide() {
     let idSlide = document.getElementsByClassName('carousel-slide');
     for (index of idSlide){
-    switch (index.style.marginLeft){
-        case "":
-            index.style.marginLeft = "-100%"
-            break;
-        case "0%":
-            index.style.marginLeft = "-100%";
-            break;
-        case "-100%":
-            index.style.marginLeft = "0%"
-            break;
-        // case "-200%":
-        //     index.style.marginLeft = "0%"
-        //     break;
-    }
+        switch (index.style.marginLeft){
+            case "":
+                index.style.marginLeft = "-100%"
+                break;
+            case "0%":
+                index.style.marginLeft = "-100%";
+                break;
+            case "-100%":
+                index.style.marginLeft = "-200%"
+                break;
+            case "-200%":
+                index.style.marginLeft = "0%"
+                break;
+        }
     }
 
 }
@@ -101,12 +101,12 @@ function cambiarDerecha()   {
                 index.style.marginLeft = "-100%";
                 break;
             case "-100%":
-                index.style.marginLeft = "0%"
+                index.style.marginLeft = "-200%"
                 break;
 
-            // case "-200%":
-            //     index.style.marginLeft = "0%"
-            //     break;
+            case "-200%":
+                index.style.marginLeft = "0%"
+                break;
 
         }
     }
@@ -121,17 +121,17 @@ function cambiarIzquierda()   {
     for (index of idSlide){
         switch (index.style.marginLeft){
             case "":
-                index.style.marginLeft = "-100%"
+                index.style.marginLeft = "-200%"
                 break;
             case "0%":
-                index.style.marginLeft = "-100%";
+                index.style.marginLeft = "-200%";
                 break;
             case "-100%":
                 index.style.marginLeft = "0%"
                 break;
-            // case "-100%":
-            //     index.style.marginLeft = "0%"
-            //     break;
+            case "-200%":
+                index.style.marginLeft = "-100%"
+                break;
         }
     }
     intervalo = setInterval(slide,6000);
