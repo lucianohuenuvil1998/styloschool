@@ -21,7 +21,7 @@ let intervalo
 
 
 addEventListener('DOMContentLoaded', () => {
-    intervalo = setInterval(slide,6000);
+    intervalo = setInterval(slide,5000);
 
 
     const message = document.getElementById("welcome_message")
@@ -75,11 +75,11 @@ function slide() {
                 index.style.marginLeft = "-100%";
                 break;
             case "-100%":
-                index.style.marginLeft = "-200%"
-                break;
-            case "-200%":
                 index.style.marginLeft = "0%"
                 break;
+            // case "-200%":
+            //     index.style.marginLeft = "0%"
+            //     break;
         }
     }
 
@@ -101,12 +101,12 @@ function cambiarDerecha()   {
                 index.style.marginLeft = "-100%";
                 break;
             case "-100%":
-                index.style.marginLeft = "-200%"
-                break;
-
-            case "-200%":
                 index.style.marginLeft = "0%"
                 break;
+
+            // case "-200%":
+            //     index.style.marginLeft = "0%"
+            //     break;
 
         }
     }
@@ -121,17 +121,17 @@ function cambiarIzquierda()   {
     for (index of idSlide){
         switch (index.style.marginLeft){
             case "":
-                index.style.marginLeft = "-200%"
+                index.style.marginLeft = "-100%"
                 break;
             case "0%":
-                index.style.marginLeft = "-200%";
+                index.style.marginLeft = "-100%";
                 break;
             case "-100%":
                 index.style.marginLeft = "0%"
                 break;
-            case "-200%":
-                index.style.marginLeft = "-100%"
-                break;
+            // case "-200%":
+            //     index.style.marginLeft = "-100%"
+            //     break;
         }
     }
     intervalo = setInterval(slide,6000);

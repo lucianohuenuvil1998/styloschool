@@ -132,7 +132,7 @@ main{
 .carousel-slide{
     display: flex;
     flex-direction: row;
-    width: 300%;
+    width: 200%;
     transition: 1s;
 }
 
